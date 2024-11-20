@@ -16,6 +16,8 @@
     /* Insert specific CSS properties here */
     width: 80%;
     margin-right: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30%;
 }
 
 /* Task 2: Style the search button */
@@ -63,6 +65,9 @@
     border: 2px solid #222;
     background-color: #fff;
     padding: 5px;
+}
+.search-results:hover{
+    background-color: #3333336b;
 }
 .card{
 background-color: #ced4da;
