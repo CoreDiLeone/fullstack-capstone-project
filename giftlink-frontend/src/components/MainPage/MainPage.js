@@ -18,7 +18,7 @@ function MainPage() {
            const data = await response.json(); 
            setGifts(data);
         }catch(error){
-            console.error("There was an error in the request");
+            console.log("There was an error in the request" + error.message);
         }
        }
        fetchGifts();
