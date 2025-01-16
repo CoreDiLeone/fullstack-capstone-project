@@ -1,17 +1,19 @@
 import React from 'react';
-
+import "./Navbar.css";
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="/">GiftLink</a>
-            <div className="collapse navbar-collapse" id="navbarNav">
+        <nav className="navbar navbar-light bg-light">
+            <div className="container-links">
+           
                 <ul className="navbar-nav">
-
                     <li className="nav-item">
-                    <a className="nav-link" href="/home.html">Home</a> {/* Link to home.html */}
+                        <a className="navbar-brand nav-brand-customized" href="/">GiftLink</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/app">Gifts</a> {/* Updated Link */}
+                        <a className="nav-link" href="/home.html">Home</a> 
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/app">Gifts</a> 
                     </li>
                 </ul>
             </div>

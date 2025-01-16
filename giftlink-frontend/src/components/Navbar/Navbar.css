@@ -1,0 +1,13 @@
+
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-item{
+    margin: 5px;
+}
+.nav-brand-customized{
+    margin: 0px 0px 0px 20px;
+    font-weight: bold;
+}

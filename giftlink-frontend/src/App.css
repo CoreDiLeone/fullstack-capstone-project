@@ -41,7 +41,7 @@ body,
 /* Success color for messages or confirmation */
 .text-success,
 .btn-success {
-  color: #28a745; /* Fresh green */
+  color: #28a79c; /* Fresh green */
 }
 
 .container {
@@ -121,12 +121,6 @@ body,
 
 .list-group-item-warning {
   color: #ffc107; /* Yellow text color for older items */
-}
-
-/* Customize the navbar brand and links */
-.navbar-brand, .nav-link {
-  font-size: 1.2rem; /* Increase font size */
-  font-weight: 500; /* Medium weight for better visibility */
 }
 
 /* Increase the font size and weight of nav-item */
