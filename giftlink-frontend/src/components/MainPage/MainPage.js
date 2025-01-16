@@ -10,12 +10,14 @@ function MainPage() {
         // Task 1: Write async fetch operation
        const fetchGifts = async () =>{
         try{
-            const response = await fetch(`${urlConfig.backendUrl}/api/gifts`);
+            const url = `${urlConfig.backendUrl}/api/gifts`;
+            const response = await fetch(url);
             
             if(!response.ok){
                 throw new Error(`There was an HTTP error: ${response.status}`);
             }
            const data = await response.json(); 
+         
            setGifts(data);
         }catch(error){
             console.log("There was an error in the request" + error.message);
