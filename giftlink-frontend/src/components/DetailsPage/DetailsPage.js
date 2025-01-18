@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './DetailsPage.css';
+import {urlConfig} from '../../config';
 
 function DetailsPage() {
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ function DetailsPage() {
     const [error, setError] = useState(null);
 
 	useEffect(() => {
+        //Important: take note about this
         const authenticationToken = sessionStorage.getItem('auth-token');
         if (!authenticationToken) {
 			// Task 1: Check for authentication and redirect
@@ -21,6 +23,7 @@ function DetailsPage() {
             try {
 				// Task 2: Fetch gift details
                 const url = `${urlConfig.backendUrl}/api/gifts/${productId}`;
+                
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

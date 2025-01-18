@@ -6,6 +6,10 @@ import {urlConfig} from '../../config';
 function SearchPage() {
 
     //Task 1: Define state variables for the search query, age range, and search results.
+    const [ searchQQuery, seSearchtQuery ] = useState("");
+    const [ ageRange, setAgeRange ] = useState(6);
+    const [ searchResults, setSearchResults ] = useState([]);
+
     const categories = ['Living', 'Bedroom', 'Bathroom', 'Kitchen', 'Office'];
     const conditions = ['New', 'Like New', 'Older'];
 
@@ -32,7 +36,34 @@ function SearchPage() {
 
 
     // Task 2. Fetch search results from the API based on user inputs.
+    const handleSearch = async () =>{
 
+        const baseUrl = `${urlConfig.backendUrl}/api/search?`;
+        const queryParams = new URLSearchParams({ 
+            name: searchQuery, 
+            age_years: ageRange, 
+            category: document.getElementById("categorySelect").value,
+            condition: document.getElementById("conditionSelect").value }).toString();
+        try{
+          
+            const url = `${baseUrl}${queryParams}`;
+            console.log("This is the url for fetch data basend on queries:", url);
+            const results = await fetch(url);
+            
+            if(!results.ok){
+                throw new error(`There has been an error in the query: ${response.status}`);
+            }
+
+            const data = await results.json();
+            setSearchResults(data);
+        }catch(e){
+
+            console.log("There was an error in the fetch:", e.message);
+        }
+    }
+    handleSearch();
+
+    
     const navigate = useNavigate();
 
     const goToDetailsPage = (productId) => {

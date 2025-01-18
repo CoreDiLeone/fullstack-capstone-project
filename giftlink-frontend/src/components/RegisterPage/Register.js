@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import './RegisterPage.css';
-
+import { useNavigate } from 'react-router-dom';
 function RegisterPage() {
 
+    const navigate = useNavigate();
     //insert code here to create useState hook variables for firstName, lastName, email, password
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -11,10 +11,10 @@ function RegisterPage() {
     const [password, setPassword] = useState("");
 
     // insert code here to create handleRegister function and include console.log
-    const handlerResgister = async () => {
-
+    const handlerResgister = async (e) => {
+        e.preventDefault();
         console.log("Register button clicked :)")
-
+        navigate("/app");
     }
 
     return (

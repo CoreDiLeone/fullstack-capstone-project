@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './LoginPage.css';
 
 function LoginPage() {
 
+    const navigate = useNavigate();
     //insert code here to create useState hook variables for email, password
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -10,6 +12,7 @@ function LoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault();
         console.log("Button login :)");
+        navigate("/app");
     }
     return (
         <div className="container mt-5">
