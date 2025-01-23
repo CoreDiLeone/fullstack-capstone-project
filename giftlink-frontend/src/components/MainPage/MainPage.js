@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {urlConfig} from '../../config';
-
+import "./MainPage.css";
 function MainPage() {
     const [gifts, setGifts] = useState([]);
     const navigate = useNavigate();
@@ -45,7 +45,8 @@ function MainPage() {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container-customized">
+        <div className="container pt-5 ">
             <div className="row">
                 {gifts.map((gift) => (
                     <div key={gift.id} className="col-md-4 mb-4">
@@ -73,7 +74,7 @@ function MainPage() {
                                 {/* // Write your code below this line */}
                                 <p className="card-text">{formatDate(gift.date_added)}</p>
 
-                                <button onClick={() => goToDetailsPage(gift.id)} className="btn btn-primary">
+                                <button onClick={() => goToDetailsPage(gift.id)} className="btn-customized">
                                     View Details
                                 </button>
                             </div>
@@ -81,6 +82,7 @@ function MainPage() {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 }

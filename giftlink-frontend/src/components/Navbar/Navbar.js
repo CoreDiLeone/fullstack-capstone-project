@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {urlConfig} from '../../config';
+//import {urlConfig} from '../../config';
 import { useAppContext } from '../../context/AuthContext';
-import "./Navbar";
+import "./Navbar.css";
 
 export default function Navbar() {
     const { isLoggedIn, setIsLoggedIn, userName, setUserName } = useAppContext();
@@ -39,22 +39,22 @@ export default function Navbar() {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light" id='navbar_container'>
-        <a className="navbar-brand" href={`${urlConfig.backendUrl}/app`}>GiftLink</a>
+        <Link className="navbar-brand-customized" to='/app'>GiftLink</Link>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav nav-ul-customized">
             <li className="nav-item">
-              <a className="nav-link" href="/home.html">Home</a> {/* Link to home.html */}
+              <a className="nav-link nav-link-customized" href="/home.html">Home</a> {/* Link to home.html */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/app">Gifts</Link> {/* Updated Link */}
+              <Link className="nav-link nav-link-customized" to="/app">Gifts</Link> {/* Updated Link */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/app/search">Search</Link>
+              <Link className="nav-link nav-link-customized" to="/app/search">Search</Link>
             </li>
             <ul className="navbar-nav ml-auto">
             {isLoggedIn ? (
@@ -69,7 +69,7 @@ export default function Navbar() {
                 <Link className="nav-link login-btn" to="/app/login">Login</Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link register-btn" to="/app/register">Register</Link>
+                <Link className="nav-link register-btn nav-link-customized" to="/app/register">Register</Link>
                 </li>
             </>
                                 )

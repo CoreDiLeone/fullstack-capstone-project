@@ -123,12 +123,6 @@ body,
   color: #ffc107; /* Yellow text color for older items */
 }
 
-/* Increase the font size and weight of nav-item */
-.nav-item .nav-link {
-  font-size: 1.1rem; /* Larger font size for nav links */
-  font-weight: bold; /* Bold font weight for emphasis */
-  color: #0056b3; /* Choose a color that stands out */
-}
 
 /* Change the background color of the navbar */
 .navbar {
@@ -136,11 +130,6 @@ body,
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
 }
 
-/* Add a hover effect to nav links */
-.nav-item .nav-link:hover {
-  color: #004085; /* A darker shade for hover state */
-  text-decoration: none; /* Optional: Removes the underline on hover */
-}
 
 /* Highlight the active nav link */
 .nav-item.active .nav-link, .nav-item .nav-link.active {
@@ -150,14 +139,7 @@ body,
   font-weight: bold; /* Makes the active link bold */
 }
 
-/* Style for login button */
-.nav-link.login-btn {
-  background-color: #28a745; /* A green color for login */
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s ease-in-out;
-}
+
 
 .nav-link.login-btn:hover,
 .nav-link.login-btn:focus {

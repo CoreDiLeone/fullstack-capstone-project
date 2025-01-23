@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './RegisterPage.css';
 import { useNavigate } from 'react-router-dom';
 //Task 1: Import urlConfig from `giftlink-frontend/src/config.js`
-import urlConfig from '../../config';
+import {urlConfig} from '../../config';
 //Task 2: Import useAppContext `giftlink-frontend/context/AuthContext.js`
 import { useAppContext } from '../../context/AuthContext';
 //Task 3: Import useNavigate from `react-router-dom` to handle navigation after successful registration.
@@ -41,7 +41,7 @@ function RegisterPage() {
 
         if (jsonData.authtoken) {
             sessionStorage.setItem('auth-token', jsonData.authtoken);
-            sessionStorage.setItem('name', jsonData.firstName);
+            sessionStorage.setItem('name', firstName);
             sessionStorage.setItem('email', jsonData.email);
         //Step 2 - Task 3
             setIsLoggedIn(true);

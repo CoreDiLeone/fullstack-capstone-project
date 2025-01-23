@@ -1,0 +1,12 @@
+
+.btn-customized{
+    color: #fefefe;
+    border-radius: 10px;
+    background: rgb(156, 65, 216);
+    font-weight: bold;
+    border: none;
+}
+
+.container-customized{
+ background-color: rgb(233, 222, 248);
+}
