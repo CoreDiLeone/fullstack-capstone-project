@@ -47,7 +47,7 @@ function MainPage() {
     return (
         <div className="container-customized">
         <div className="container pt-5 ">
-            <div className="row">
+            <div className="row container-cards-customized">
                 {gifts.map((gift) => (
                     <div key={gift.id} className="col-md-4 mb-4">
                         <div className="card product-card">

@@ -5,11 +5,18 @@
     align-items: center;
 }
 .nav-item{
-    margin: 5px;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+}
+.nav-item:hover{
+    outline: 3px solid #00897bd0;
+    border-radius: 10px;
+    
 }
 .nav-link-customized{
     color: #222;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1em;
 }
 .navbar-brand-customized{
@@ -17,13 +24,14 @@
     font-weight: bold;
     color: #222;
     text-decoration: none;
-    font: 3em;
+    font-size: 1.5em;
 }
 
 /* Style for login button */
 .nav-link.login-btn {
     background-color: #00897b;/* A green color for login */
     color: white;
+    font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     transition: background-color 0.2s ease-in-out;
@@ -33,5 +41,8 @@
     .nav-ul-customized{
        flex-direction: column;
        align-items: center;
+       text-align: center;
+       justify-content: center;
+       margin-top: 10px ;
     }
 }

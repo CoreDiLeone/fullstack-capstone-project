@@ -143,7 +143,7 @@ body,
 
 .nav-link.login-btn:hover,
 .nav-link.login-btn:focus {
-  background-color: #218838; /* A darker green on hover/focus for login */
+  background-color: #006d62; /* A darker green on hover/focus for login */
   color: white;
   text-decoration: none;
 }
