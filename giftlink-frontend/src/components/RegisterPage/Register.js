@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './RegisterPage.css';
 import { useNavigate } from 'react-router-dom';
 //Task 1: Import urlConfig from `giftlink-frontend/src/config.js`
-import {urlConfig} from '../../config';
+import { urlConfig } from '../../config';
 //Task 2: Import useAppContext `giftlink-frontend/context/AuthContext.js`
 import { useAppContext } from '../../context/AuthContext';
 //Task 3: Import useNavigate from `react-router-dom` to handle navigation after successful registration.
@@ -16,48 +16,50 @@ function RegisterPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const [ errorMessage, setErrorMessage ] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const { setIsLoggedIn } = useAppContext();
 
-    const handlerRegister = async () =>{
-       
-       try{ const response = await fetch(`${urlConfig.backendUrl}/api/auth/register`, 
-            { method: "POST",
-                headers: {
-                    "content-type" : "application/json"
-            },
-            body: JSON.stringify({
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                password: password
-            })
+    const handlerRegister = async () => {
 
-        })
-        const jsonData = await response.json();
-        console.log("Response:", jsonData );
-        console.log("error:", jsonData.error);
+        try {
+            const response = await fetch(`${urlConfig.backendUrl}/api/auth/register`,
+                {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password
+                    })
 
-        if (jsonData.authtoken) {
-            sessionStorage.setItem('auth-token', jsonData.authtoken);
-            sessionStorage.setItem('name', firstName);
-            sessionStorage.setItem('email', jsonData.email);
-        //Step 2 - Task 3
-            setIsLoggedIn(true);
-        //Step 2 - Task 4
-            navigate('/app');
-        }
-        if (jsonData.error) {
-        //Step 2 - Task 5
-            setErrorMessage(jsonData.error);
-        }
-         }catch(e){
+                })
+            const jsonData = await response.json();
+            console.log("Response:", jsonData);
+            console.log("error:", jsonData.error);
+
+            if (jsonData.authtoken) {
+                sessionStorage.setItem('auth-token', jsonData.authtoken);
+                sessionStorage.setItem('name', firstName);
+                sessionStorage.setItem('email', jsonData.email);
+                //Step 2 - Task 3
+                setIsLoggedIn(true);
+                //Step 2 - Task 4
+                navigate('/app');
+            }
+            if (jsonData.error) {
+                //Step 2 - Task 5
+                setErrorMessage(jsonData.error);
+            }
+        } catch (e) {
             console.log("There was an error in the request POST:", e.errorMessage)
-         }
-       
-     }
-   
+        }
+
+    }
+
 
     return (
         <div className="container mt-5">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {urlConfig} from '../../config';
+import { urlConfig } from '../../config';
 import "./SearchPage.css";
 function SearchPage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -11,14 +11,14 @@ function SearchPage() {
     const conditions = ['New', 'Like New', 'Older'];
 
     useEffect(() => {
-        
+
         const fetchProducts = async () => {
             try {
                 let url = `${urlConfig.backendUrl}/api/gifts`
                 console.log(url)
                 const response = await fetch(url);
                 if (!response.ok) {
-                    
+
                     throw new Error(`HTTP error; ${response.status}`)
                 }
                 const data = await response.json();

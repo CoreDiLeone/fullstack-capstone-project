@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './DetailsPage.css';
-import {urlConfig} from '../../config';
+import { urlConfig } from '../../config';
 
 function DetailsPage() {
     const navigate = useNavigate();
@@ -10,20 +10,20 @@ function DetailsPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-	useEffect(() => {
+    useEffect(() => {
         //Important: take note about this
         const authenticationToken = sessionStorage.getItem('auth-token');
         if (!authenticationToken) {
-			// Task 1: Check for authentication and redirect
+            // Task 1: Check for authentication and redirect
             navigate("/app/login");
         }
 
         // get the gift to be rendered on the details page
         const fetchGift = async () => {
             try {
-				// Task 2: Fetch gift details
+                // Task 2: Fetch gift details
                 const url = `${urlConfig.backendUrl}/api/gifts/${productId}`;
-                
+
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -39,18 +39,18 @@ function DetailsPage() {
 
         fetchGift();
 
-		// Task 3: Scroll to top on component mount
-		window.scrollTo(0, 0);
+        // Task 3: Scroll to top on component mount
+        window.scrollTo(0, 0);
 
     }, [productId, navigate]);
 
 
     const handleBackClick = () => {
-		// Task 4: Handle back click
-		navigate(-1);
-	};
+        // Task 4: Handle back click
+        navigate(-1);
+    };
 
-	//The comments have been hardcoded for this project.
+    //The comments have been hardcoded for this project.
     const comments = [
         {
             author: "John Doe",
@@ -79,7 +79,7 @@ function DetailsPage() {
     if (error) return <div>Error: {error}</div>;
     if (!gift) return <div>Gift not found</div>;
 
-return (
+    return (
         <div className="container mt-5">
             <button className="btn btn-secondary mb-3" onClick={handleBackClick}>Back</button>
             <div className="card product-details-card">
@@ -89,34 +89,34 @@ return (
                 <div className="card-body">
                     <div className="image-placeholder-large">
                         {gift.image ? (
-			// Task 5: Display gift image
-                        <img src={gift.image} key={gift.id} alt={gift.name} className="product-image-large"/>
+                            // Task 5: Display gift image
+                            <img src={gift.image} key={gift.id} alt={gift.name} className="product-image-large" />
                         ) : (
                             <div className="no-image-available-large">No Image Available</div>
                         )}
                     </div>
-                    
-                    	<p><strong>Category:</strong> 
-				{gift.category}
-			</p>
-                    	<p><strong>Condition:</strong> 
-				{gift.condition}
-                    	</p>
-                    	<p><strong>Date Added:</strong> 
-				{gift.date}
-                        </p>
-                    	<p><strong>Age (Years):</strong> 
-				{gift.age}
-                    	</p>
-                    	<p><strong>Description:</strong> 
-				{gift.description}
-                    	</p>
+
+                    <p><strong>Category:</strong>
+                        {gift.category}
+                    </p>
+                    <p><strong>Condition:</strong>
+                        {gift.condition}
+                    </p>
+                    <p><strong>Date Added:</strong>
+                        {gift.date}
+                    </p>
+                    <p><strong>Age (Years):</strong>
+                        {gift.age}
+                    </p>
+                    <p><strong>Description:</strong>
+                        {gift.description}
+                    </p>
                 </div>
             </div>
             <div className="comments-section mt-4">
                 <h3 className="mb-3">Comments</h3>
-				
-				{comments.map((comment, index) => 
+
+                {comments.map((comment, index) =>
                     <div key={index} className="card mb-3">
                         <div className="card-body">
                             <p className="comment-author"><strong>{comment.author}:</strong></p>
