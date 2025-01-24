@@ -88,13 +88,22 @@
         color: #333;
     }
 
-    .btn-primary {
-        background-color: #009688; /* A shade of teal for a modern look */
-        border: none;
+    .btn-custom-search{
+    color: #fefefe;
+    border-radius: 5px;
+    background: rgb(156, 65, 216);
+    font-weight: 400;
+    border: none;
+    width: 100%;
     }
 
-    .btn-primary:hover {
-        background-color: #00796b; /* A darker shade of teal for hover state */
+   .btn-custom-search:hover{
+    background-color: rgb(121, 48, 170);
+    }
+
+    .main-container-search{
+    background-color:  rgb(233, 222, 248);
+    width: 100%;
     }
 
     /* Responsive design for smaller screens */

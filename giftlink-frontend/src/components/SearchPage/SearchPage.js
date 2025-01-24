@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {urlConfig} from '../../config';
-
+import "./SearchPage.css";
 function SearchPage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [ageRange, setAgeRange] = useState(6); // Initialize with minimum value
@@ -61,9 +61,9 @@ function SearchPage() {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container-fluid mt-5 main-container-search">
             <div className="row justify-content-center">
-                <div className="col-md-6">
+                <div className="col-8 col-md-4">
                     <div className="filter-section mb-3 p-3 border rounded">
                         <h5>Filters</h5>
                         <div className="d-flex flex-column">
@@ -106,7 +106,7 @@ function SearchPage() {
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
                     />
-                    <button className="btn btn-primary" onClick={handleSearch}>Search</button>
+                    <button className="btn-custom-search" onClick={handleSearch}>Search</button>
                     <div className="search-results mt-4">
                         {searchResults.length > 0 ? (
                             searchResults.map(product => (
@@ -118,7 +118,7 @@ function SearchPage() {
                                         <p className="card-text">{product.description.slice(0, 100)}...</p>
                                     </div>
                                     <div className="card-footer">
-                                        <button onClick={() => goToDetailsPage(product.id)} className="btn btn-primary">
+                                        <button onClick={() => goToDetailsPage(product.id)} className="btn-custom-search">
                                             View More
                                         </button>
                                     </div>

@@ -46,10 +46,10 @@ function MainPage() {
 
     return (
         <div className="container-customized">
-        <div className="container pt-5 ">
-            <div className="row container-cards-customized">
+        <div className="container pt-5 container-cards-customized">
+            <div className="row ">
                 {gifts.map((gift) => (
-                    <div key={gift.id} className="col-md-4 mb-4">
+                    <div key={gift.id} className="col-lg-4 mb-4 col-md-">
                         <div className="card product-card">
 
                             {/* // Task 4: Display gift image or placeholder */}
