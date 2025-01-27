@@ -31,7 +31,7 @@
 /* Style for card header */
 .card-header {
     /* Task 4 styling */
-    background: linear-gradient(0deg, rgba(43,255,222,1) 10%, rgba(113,22,235,1) 100%);
+    background:  rgba(113,22,235,1);
     color: #fefefe;
 }
 
